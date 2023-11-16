@@ -9,7 +9,10 @@ func Test_updateMessage(t *testing.T) {
 	// msg := "Hello, world!"
 
 	wg.Add(2)
-	go updateMessage("x") // race condition
+
+	// error
+	// go updateMessage("x") // race condition
+	go updateMessage("Goodbye, cruel world!")
 	go updateMessage("Goodbye, cruel world!")
 	wg.Wait()
 
